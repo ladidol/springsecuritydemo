@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security01?characterEncoding=utf-8
+    username: root
+    password: nihao123
+  cache:
+    type: redis
+  redis: #redis连接配置
+    host: 127.0.0.1
+    port: 6379
+    password:
+
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 500
+        min-idle: 0
+    lettuce:
+      shutdown-timeout: 0ms
+
+jwt:
+  #设置token的过期时间，单位为秒
+  token-expired-time: 36000 #10小时
+  #设置token的id
+  id: tokenId
+  #设置密钥
+  secret: cBfUk1vxjWIMBQJM208rTQdMGxzAseNNDk1M8vHN1YHOOF2M6CcxLitmVeAjxxie
+
+
+
